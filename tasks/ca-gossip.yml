@@ -1,0 +1,23 @@
+- name: Distribute CA public certificate
+  ansible.builtin.copy:
+    content: "{{ lookup('hashi_vault', 'digitalocean/data/consul')['ca_cert'] }}"
+    dest: /etc/consul.d/consul-ca.pem
+    owner: consul
+    group: consul
+    mode: "0640"
+
+- name: Distribute Consul Agent cert
+  ansible.builtin.copy:
+    content: "{{ lookup('hashi_vault', 'digitalocean/data/consul')['dc_do_ams_3_server_cert'] }}"
+    dest: /etc/consul.d/consul-agent-cert.pem
+    owner: consul
+    group: consul
+    mode: "0640"
+
+- name: Distribute Consul Agent Key
+  ansible.builtin.copy:
+    content: "{{ lookup('hashi_vault', 'digitalocean/data/consul')['dc_do_ams_3_server_key'] }}"
+    dest: /etc/consul.d/consul-agent-key.pem
+    owner: consul
+    group: consul
+    mode: "0400"

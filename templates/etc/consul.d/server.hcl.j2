@@ -1,0 +1,19 @@
+server = true
+bootstrap_expect = 3
+
+{% raw %}
+bind_addr = "0.0.0.0"
+advertise_addr = "{{ GetPrivateInterfaces | include \"network\" \"10.0.0.0/8\" | attr \"address\" }}"
+{% endraw %}
+client_addr = "0.0.0.0"
+
+autopilot {
+  cleanup_dead_servers = true
+  last_contact_threshold = "10s"
+  server_stabilization_time = "30s"
+}
+
+datacenter = "{{ datacenter }}"
+disable_host_node_id = true
+log_file = "/var/log/consul.log"
+log_rotate_bytes = "10485760"

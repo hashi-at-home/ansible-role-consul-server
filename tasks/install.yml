@@ -1,0 +1,16 @@
+- name: Install | Add Hashicorp GPG key
+  ansible.builtin.apt_key:
+    url: "{{ hashi_repo_url }}/gpg"
+    keyring: "{{ hashi_keyring }}"
+    state: present
+
+- name: Add Hashi repo
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by={{ hashi_keyring }}] {{ hashi_repo_url }} {{ ansible_distribution_release | lower }} main"
+    state: present
+    update_cache: true
+
+- name: Ensure consul added
+  ansible.builtin.package:
+    name: "consul={{ consul_version }}"
+    state: present

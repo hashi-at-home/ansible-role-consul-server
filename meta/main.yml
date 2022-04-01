@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Bruce Becker
+  role_name: digital_ocean_base
+  description: Ansible role for consul images
+  company: Hashi @ Home
+  license: MIT
+  min_ansible_version: "2.10"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+        - groovy
+        - hirsute
+  galaxy_tags: ["cloud", "digitalocean", "consul"]
+
+dependencies: []

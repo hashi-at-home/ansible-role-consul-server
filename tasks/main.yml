@@ -1,0 +1,5 @@
+---
+# tasks file for role
+- include_tasks: install.yml
+- include_tasks: ca-gossip.yml
+- include_tasks: configure.yml

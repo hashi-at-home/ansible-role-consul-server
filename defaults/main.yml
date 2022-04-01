@@ -1,0 +1,10 @@
+---
+# defaults file for role
+hashi_repo_url: https://apt.releases.hashicorp.com
+hashi_keyring: /etc/apt/trusted.gpg.d/hashi-gpg-keyring.gpg
+hashi_repo: deb [arch=amd64 signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+consul_version: 1.11.4
+datacenter: "dc-do-ams-3"
+auto_encrypt: true
+consul_data_dir: /opt/consul

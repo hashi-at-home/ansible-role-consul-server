@@ -1,0 +1,14 @@
+---
+# Playbook to test the role
+# - name: Ensure python3
+#   hosts: all
+#   user: root
+#   gather_facts: false
+#   tasks:
+#     - raw: apt-get update && apt-get install -y python3 python3-pip
+
+- name: Apply role
+  hosts: all
+  user: root
+  roles:
+    - ansible-role-consul-server

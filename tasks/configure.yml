@@ -1,0 +1,25 @@
+- name: Template consul configuration
+  ansible.builtin.template:
+    src: etc/consul.d/consul.hcl.j2
+    dest: /etc/consul.d/consul.hcl
+    backup: true
+    mode: "0644"
+    owner: consul
+    group: consul
+    # validate: consul validate %s
+
+# Template the consul server configuration
+- name: Configure consul server
+  ansible.builtin.template:
+    src: etc/consul.d/server.hcl.j2
+    dest: /etc/consul.d/server.hcl
+    owner: consul
+    group: consul
+    mode: 0644
+    # validate: consul validate %s
+
+- name: Enable consul service
+  ansible.builtin.service:
+    name: consul
+    enabled: true
+    state: started
