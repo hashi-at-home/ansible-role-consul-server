@@ -1,5 +1,9 @@
 plugin: community.digitalocean.digitalocean
 api_token: "{{ lookup('hashi_vault', 'digitalocean/data/tokens')['ansible'] }}"
+filters:
+  - '"ansible-role" in do_tags'
+  - '"consul" in do_tags'
+  - '"test" in do_tags'
 attributes:
   - id
   - name
@@ -15,7 +19,7 @@ keyed_groups:
     separator: _
   - key: do_tags | lower
     prefix: ''
-    separator: ''
+    separator: '_'
 compose:
   ansible_host: do_networks.v4 | selectattr('type','eq','public') | map(attribute='ip_address') | first
   class: do_size.description | lower

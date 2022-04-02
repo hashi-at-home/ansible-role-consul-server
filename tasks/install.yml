@@ -1,3 +1,8 @@
+- name: Add prerequisites
+  ansible.builtin.package:
+    name: "{{ prerequisites[ansible_distribution | lower ] }}"
+    state: present
+
 - name: Install | Add Hashicorp GPG key
   ansible.builtin.apt_key:
     url: "{{ hashi_repo_url }}/gpg"

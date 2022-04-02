@@ -53,7 +53,7 @@ resource "digitalocean_droplet" "test" {
   size          = "s-1vcpu-1gb"
   vpc_uuid      = data.digitalocean_vpc.vpc.id
   region        = "ams3"
-  tags          = ["ansible-role-do-base-platform-test"]
+  tags          = ["ansible-role", "consul", "test"]
   backups       = false
   monitoring    = false
   droplet_agent = true
