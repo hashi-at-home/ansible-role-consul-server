@@ -1,10 +1,8 @@
 server = true
 bootstrap_expect = 3
 
-{% raw %}
 bind_addr = "0.0.0.0"
-advertise_addr = "{{ GetPrivateInterfaces | include \"network\" \"10.0.0.0/8\" | attr \"address\" }}"
-{% endraw %}
+advertise_addr = "{{ '{{' }} GetPrivateInterfaces | include \"network\" \"10.0.0.0/8\" | attr \"address\" {{ '}}' }}"
 client_addr = "0.0.0.0"
 
 autopilot {
@@ -16,4 +14,6 @@ autopilot {
 datacenter = "{{ datacenter }}"
 disable_host_node_id = true
 log_file = "/var/log/consul.log"
-log_rotate_bytes = "10485760"
+log_rotate_bytes = 10485760
+
+retry_join = ["provider=digitalocean region={{ do_region.slug }} tag_name={{ do_cluster_tag_name }} api_token={{ lookup('community.hashi_vault.hashi_vault', 'mount_point=digitalocean, secret=digitalocean/data/tokens:autojoin_token') }}"]
