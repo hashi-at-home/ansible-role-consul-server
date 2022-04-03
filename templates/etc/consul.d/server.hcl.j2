@@ -2,7 +2,7 @@ server = true
 bootstrap_expect = 3
 
 bind_addr = "0.0.0.0"
-advertise_addr = "{{ '{{' }} GetPrivateInterfaces | include \"network\" \"10.0.0.0/8\" | attr \"address\" {{ '}}' }}"
+advertise_addr = "{{ '{{' }} GetPrivateInterfaces | include \"network\" \"{{ consul_internal_ip_range }}\" | attr \"address\" {{ '}}' }}"
 client_addr = "0.0.0.0"
 
 autopilot {

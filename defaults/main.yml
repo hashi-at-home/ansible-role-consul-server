@@ -1,12 +1,18 @@
 ---
 # defaults file for role
 # which digitalocean region are using?
-# do_region: ams3
+# This is provided automatically by the digitalocean inventory plugin
+# but if you have to provide it yourself, it can be done by setting:
+# do_region:
+#   slug: ams3
+do_vpc_name: "terraform-vpc-hah"
 do_cluster_tag_name: consul-server
-# prerequisites
 prerequisites:
   ubuntu:
+    - curl
     - net-tools
+    - unzip
+    - vim
 
 hashi_repo_url: https://apt.releases.hashicorp.com
 hashi_keyring: /etc/apt/trusted.gpg.d/hashi-gpg-keyring.gpg
