@@ -22,3 +22,4 @@ consul_version: 1.11.4
 datacenter: "dc-do-{{ do_region.slug }}"
 auto_encrypt: true
 consul_data_dir: /opt/consul
+consul_internal_ip_range: "10.10.20.0/24"

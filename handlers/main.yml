@@ -1,2 +1,7 @@
 ---
 # handlers file for role
+- name: clean node-id
+  become: true
+  ansible.builtin.file:
+    path: /opt/consul/node-id
+    state: absent

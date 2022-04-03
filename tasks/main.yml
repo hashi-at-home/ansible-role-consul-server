@@ -1,13 +1,4 @@
 ---
-- name: Get DO VPC
-  community.digitalocean.digital_ocean_vpc_info:
-    name: "{{ do_vpc_name }}"
-    oauth_token: "{{ lookup('hashi_vault', 'mount=digitalocean, secret=digitalocean/data/tokens:ansible') }}"  # pragma: allowlist secret
-  register: do_vpc
-- name: set IP range fact
-  ansible.builtin.set_fact:
-    consul_internal_ip_range: "{{ do_vpc.data[0]['ip_range'] }}"
-    cacheable: false
 # tasks file for role
 - include_tasks: install.yml
 - include_tasks: ca-gossip.yml
