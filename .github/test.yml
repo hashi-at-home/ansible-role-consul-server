@@ -10,7 +10,8 @@
   hosts: localhost
   connection: local
   tasks:
-    - debug:
+    - name: Debug groups
+      ansible.builtin.debug:
         var: groups
 
 - name: Apply role

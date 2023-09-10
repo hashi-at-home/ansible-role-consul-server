@@ -1,6 +1,7 @@
 galaxy_info:
   author: Bruce Becker
   role_name: digital_ocean_base
+  namespace: hashi_at_home
   description: Ansible role for consul images
   company: Hashi @ Home
   license: MIT

@@ -21,7 +21,7 @@
     dest: /etc/consul.d/server.hcl
     owner: consul
     group: consul
-    mode: 0644
+    mode: "0644"
     # validate: consul validate %s
 
 - name: Enable consul service
@@ -29,4 +29,4 @@
     name: consul
     enabled: true
     state: started
-  notify: clean node-id
+  notify: Clean node-id
