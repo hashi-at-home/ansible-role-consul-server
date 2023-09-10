@@ -1,5 +1,8 @@
 ---
 # tasks file for role
-- include_tasks: install.yml
-- include_tasks: ca-gossip.yml
-- include_tasks: configure.yml
+- name: Ensure Install Tasks
+  ansible.builtin.include_tasks: install.yml
+- name: Ensure CA and gossip key tasks
+  ansible.builtin.include_tasks: ca-gossip.yml
+- name: Ensure configuration tasks
+  ansible.builtin.include_tasks: configure.yml
