@@ -5,7 +5,7 @@ terraform {
   required_providers {
     digitalocean = {
       source  = "digitalocean/digitalocean"
-      version = "2.40.0"
+      version = "2.41.0"
     }
 
     vault = {
@@ -15,7 +15,7 @@ terraform {
 
     local = {
       source  = "hashicorp/local"
-      version = "2.5.1"
+      version = "2.5.2"
     }
   }
   backend "consul" {
