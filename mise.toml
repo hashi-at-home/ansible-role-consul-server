@@ -1,0 +1,11 @@
+[env]
+_.python.venv = { path = ".venv", create = true }
+
+[tools]
+python = "3.13"
+uv = "0.9.18"
+
+[tasks.install]
+description = "Install deps"
+alias = "i"
+run = "uv pip install ansible  ansible-lint pre-commit detect-secrets"
