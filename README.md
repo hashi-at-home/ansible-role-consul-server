@@ -1,6 +1,7 @@
-# Ansible role Digital Ocean base image
+# Consul Server role
 
-A role to make base images on Digital Ocean.
+This is a role to deploy a Consul server.
+Designed for use in Digital Ocean, but can be used in any Linux environment.
 
 ## Requirements
 
@@ -11,7 +12,6 @@ None.
 
 ## Dependencies
 
-
 None.
 
 ## Example Playbook
@@ -19,7 +19,7 @@ None.
 ```yaml
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: hashi-at-home.ansible-role-consul-server }
 ```
 
 ## License
