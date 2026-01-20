@@ -1,6 +1,6 @@
 galaxy_info:
   author: Bruce Becker
-  role_name: consul-server
+  role_name: consul_server
   namespace: hashi_at_home
   description: Ansible role for consul images
   company: Hashi @ Home

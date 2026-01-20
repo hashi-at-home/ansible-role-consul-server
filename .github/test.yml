@@ -18,4 +18,4 @@
   hosts: region_ams3:&_consul:&_test
   user: root
   roles:
-    - hashi_at_home.consul-server
+    - hashi_at_home.consul_server
