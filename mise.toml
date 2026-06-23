@@ -3,7 +3,7 @@ _.python.venv = { path = ".venv", create = true }
 
 [tools]
 python = "3.14.6"
-uv = "0.11.22"
+uv = "0.11.23"
 
 [tasks.install]
 description = "Install deps"
